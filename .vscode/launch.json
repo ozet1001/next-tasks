@@ -1,0 +1,56 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "プログラムの起動",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${file}",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        },
+        {
+            "name": "Next.js: debug server-side",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/next/dist/bin/next",
+            "args": ["dev"],
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"],
+            "env": {
+                "NODE_OPTIONS": "--inspect"
+            }
+        },
+        {
+            "name": "Next.js: debug client-side",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Next.js: debug full stack",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/next/dist/bin/next",
+            "args": ["dev"],
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"],
+            "serverReadyAction": {
+                "action": "debugWithChrome",
+                "killOnServerStop": true,
+                "pattern": "- Local:.+(https?://.+)",
+                "uriFormat": "%s",
+                "webRoot": "${workspaceFolder}"
+            }
+        }
+    ]
+}
