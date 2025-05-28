@@ -2,7 +2,7 @@
 import { MdAddTask } from "react-icons/md";
 import Link from "next/link";
 import TaskCard from "../components/TaskCard/TaskCard";
-import { Task, TaskDocument } from "../../../models/task";
+import { TaskDocument } from "../../../models/task";
 
 const getAllTasks = async (): Promise<TaskDocument[]> => {
 
