@@ -1,5 +1,5 @@
 import TaskCard from "@/app/components/TaskCard/TaskCard"
-import { TaskDocument } from "@/models/task"
+import { TaskDocument } from "../../../../models/task"
 
 const getCompletedTasks = async () => {
 
