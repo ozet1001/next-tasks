@@ -1,5 +1,4 @@
 'use client'
-import Link from "next/Link"
 
 const ErrorPage = () => {
   return (
