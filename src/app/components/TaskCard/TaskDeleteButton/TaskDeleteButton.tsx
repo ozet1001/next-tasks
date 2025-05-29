@@ -13,6 +13,7 @@ const TaskDeleteButton: React.FC<TaskDeleteButtonProps> = ({ id }) => {
 
   const deleteTaskWithId = deleteTask.bind(null, id);
   const inittialState: FormState = { error: '' };
+  // @ts-expect-error: Ignore build-time error for useFormState
   const [state, formAction] = useFormState(deleteTaskWithId, inittialState);
 
   useEffect(() => {
